@@ -1,13 +1,23 @@
-import java.awt.Graphics;
-import java.awt.Image;
-import java.awt.*;
-import javax.swing.*;
-import java.awt.event.*;
+
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.Arrays;
+
+import javax.swing.ButtonGroup;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
+import javax.swing.JRadioButton;
+import javax.swing.JTextField;
 
 public class Frame1 extends JFrame implements ActionListener{
 
-   JButton b1,b2;
+   JButton b1,b2,b3;
    JLabel l1,l2;
    JTextField t1;
    JPasswordField p1;
@@ -41,6 +51,7 @@ public class Frame1 extends JFrame implements ActionListener{
 
      b1 = new JButton("Login");
       b2 = new JButton("Close");
+      b3 = new JButton("Sign up");
       
 
      
@@ -48,9 +59,14 @@ public class Frame1 extends JFrame implements ActionListener{
       b2.setBounds(570,550,70,40);
       b1.setBackground(Color.white);
       b2.setBackground(Color.white);
+      b3.setBounds(250,250,100,100);
+      b3.setOpaque(false);
+      b3.setContentAreaFilled(false);
+      b3.setBorderPainted(false);
 
       b1.addActionListener(this);
       b2.addActionListener(this);
+      b3.addActionListener(this);
     
 
 
@@ -70,6 +86,7 @@ public class Frame1 extends JFrame implements ActionListener{
       background.add(p1);
       background.add(b1);
       background.add(b2);
+      background.add(b3);
       background.add(checkBox1);
       background.add(checkBox2);
       setTitle("Login Frame");
@@ -97,7 +114,12 @@ public class Frame1 extends JFrame implements ActionListener{
       {
       DisplayFrame p =  new DisplayFrame();
       }
-      else {
+      else if(ae.getSource()==b3)
+      {
+         SignUpFrame f = new SignUpFrame();
+      }
+      else 
+      {
                 JOptionPane.showMessageDialog(this, "Invalid Password");
             }
    }
