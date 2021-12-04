@@ -1,8 +1,9 @@
-package Conn;
+package Connection;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
-import Front.*;
+
+import FrontEnd.*;
  public class Conn{  
 public static void main(){	
 String name =  SignUpFrame.t1.getText();
