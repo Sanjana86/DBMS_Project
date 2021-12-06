@@ -26,7 +26,7 @@ public class Frame1 extends JFrame implements ActionListener{
       setDefaultCloseOperation(EXIT_ON_CLOSE);
       BufferedImage img = null;
       try{
-      img =  ImageIO.read(getClass().getResource("icon.png"));}
+      img =  ImageIO.read(getClass().getResource("signin.png"));}
       catch(IOException ex)
       {}
       background = new JLabel(new ImageIcon(img));
