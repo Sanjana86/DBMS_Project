@@ -1,28 +1,21 @@
 package FrontEnd;
-
-//package Frontend;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Arrays;
-
-import javax.swing.ButtonGroup;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JPasswordField;
-import javax.swing.JRadioButton;
-import javax.swing.JTextField;
+import javax.imageio.ImageIO;
+import javax.swing.*;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+import Connection.LConn;
+import Connection.PLConn;
 
 public class Frame1 extends JFrame implements ActionListener{
 
    JButton b1,b2,b3;
    JLabel l1,l2;
-   JTextField t1;
-   JPasswordField p1;
+   public static JTextField t1;
+   public static JPasswordField p1;
    JRadioButton checkBox1,checkBox2;
    
    Frame1()
@@ -31,8 +24,12 @@ public class Frame1 extends JFrame implements ActionListener{
       setSize(700,700);
       setLayout(null);
       setDefaultCloseOperation(EXIT_ON_CLOSE);
-      ImageIcon img = new ImageIcon("icon.png");
-      background = new JLabel("",img,JLabel.CENTER);
+      BufferedImage img = null;
+      try{
+      img =  ImageIO.read(getClass().getResource("icon.png"));}
+      catch(IOException ex)
+      {}
+      background = new JLabel(new ImageIcon(img));
       background.setBounds(0,0,700,700);
       add(background);
 
@@ -99,33 +96,46 @@ public class Frame1 extends JFrame implements ActionListener{
 
    public void actionPerformed(ActionEvent ae)
    {
-      char[] passValue = p1.getPassword(); 
-      char[] correctPass = new char[] {'a', 'b', 'c', 'd', 'e', 'f'};
-      char[] correctPass2 = new char[] {'1', '2', '3', '4', '5', '6'};
+    
         String sid = t1.getText();
        
       if(ae.getSource()==b2)
       {
          System.exit(0);
       }
-      if(ae.getSource()==b1 && Arrays.equals(passValue, correctPass))
+      if(ae.getSource()==b1 && checkBox1.isSelected())
       {
-      SecondFrame s =  new SecondFrame(sid);
-      s.setVisible(true);
+         LConn.main();
+         int check = LConn.a;
+         if(check == 1)
+         {
+            SecondFrame s =  new SecondFrame(sid);
+            s.setVisible(true);
+         }
       }
-      else if(ae.getSource()==b1 && Arrays.equals(passValue, correctPass2))
+      else if(ae.getSource()==b1 && checkBox2.isSelected())
       {
-      DisplayFrame p =  new DisplayFrame();
-      p.setVisible(true);
+         PLConn.main();
+         int check = PLConn.a;
+         if(check == 1)
+         {
+            DisplayFrame p =  new DisplayFrame();
+            p.setVisible(true);
+         }
       }
-      else if(ae.getSource()==b3)
+      else if(ae.getSource()==b3 && checkBox1.isSelected())
       {
          SignUpFrame f = new SignUpFrame();
          f.setVisible(true);
       }
+      else if(ae.getSource()==b3 && checkBox2.isSelected())
+      {
+         ProfFrame f = new ProfFrame();
+         f.setVisible(true);
+      }
       else 
       {
-                JOptionPane.showMessageDialog(this, "Invalid Password");
+         JOptionPane.showMessageDialog(this, "Select Student or Professr OR Invalid Password");
      }
    }
    

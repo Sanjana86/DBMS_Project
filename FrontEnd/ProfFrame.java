@@ -2,30 +2,23 @@ package FrontEnd;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JPasswordField;
-import javax.swing.JTextField;
+import javax.swing.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.Arrays;
-
 import javax.imageio.ImageIO;
 import Connection.*;
 
-public class SignUpFrame extends JFrame implements ActionListener {
+public class ProfFrame extends JFrame implements ActionListener {
 	
-	String sname,semail,srollno,suserid,spasswoed,scpassword;
-        JLabel l1,l2,l3,l4,l5,l6;
-        public static JTextField t1,t2,t3,t4,t5,t6;
+	
+       public static JLabel l1,l2,l3,l4,l5,l6;
+        public static JTextField t1,t2, t3, t4,t5,t6;
         public static JPasswordField p1,p2;
         JButton b1;
         
-        SignUpFrame()
-        {
+        ProfFrame()
+ {
 		
 		  JLabel background;
 		setTitle("SignUp Page");
@@ -34,7 +27,7 @@ public class SignUpFrame extends JFrame implements ActionListener {
 	    
         BufferedImage img = null;
         try{
-        img =  ImageIO.read(getClass().getResource("signup.png"));}
+        img =  ImageIO.read(getClass().getResource("psignup.png"));}
         catch(IOException ex)
         {}
         background = new JLabel(new ImageIcon(img));
@@ -44,7 +37,7 @@ public class SignUpFrame extends JFrame implements ActionListener {
       t1 = new JTextField(25);
       l2 = new JLabel("Eamil Id:");
       t2 = new JTextField(50);
-      l3 = new JLabel("Roll no:");
+      l3 = new JLabel("Professor Id:");
       t3 = new JTextField(15);
       l4 = new JLabel("User Id:");
       t4 = new JTextField(15);
@@ -52,7 +45,6 @@ public class SignUpFrame extends JFrame implements ActionListener {
       p1 = new JPasswordField();
       l6 = new JLabel("Confirm Password:");
       p2 = new JPasswordField();
-      
 
       l1.setBounds(150,100,100,30);
       l2.setBounds(150,150,100,30);
@@ -87,27 +79,23 @@ public class SignUpFrame extends JFrame implements ActionListener {
       background.add(l6);
       background.add(p2);
       background.add(b1);
-      
+      setVisible(true);
    setDefaultCloseOperation(EXIT_ON_CLOSE);
 		
        
 	}
-
-   public void actionPerformed(ActionEvent ae)
-   {
-      char[] password = p1.getPassword();
+	public void actionPerformed(ActionEvent ae)
+   {  
+    char[] password = p1.getPassword();
     char[] cpassword = p2.getPassword();
-    
-      if (ae.getSource()==b1 && Arrays.equals(password, cpassword))
+       if(ae.getSource()==b1 && Arrays.equals(password, cpassword))
       {
-         
-         Conn.main();
-         dispose();
+        PConn.main();
+        dispose();
       }
       else
       {
-         JOptionPane.showMessageDialog(this, "Invalid Password or RollNo");
+        JOptionPane.showMessageDialog(this, "Invalid Password");
       }
-   }
-	
+    }
 }
