@@ -97,6 +97,7 @@ public class Frame1 extends JFrame implements ActionListener{
    {
     
         String sid = t1.getText();
+        String pid = t1.getText();
        
       if(ae.getSource()==b2)
       {
@@ -111,6 +112,10 @@ public class Frame1 extends JFrame implements ActionListener{
             SecondFrame s =  new SecondFrame(sid);
             s.setVisible(true);
          }
+         else 
+         {
+         JOptionPane.showMessageDialog(this, "Invalid Login Id or Password");
+         } 
       }
       else if(ae.getSource()==b1 && checkBox2.isSelected())
       {
@@ -118,9 +123,14 @@ public class Frame1 extends JFrame implements ActionListener{
          int check = PLConn.a;
          if(check == 1)
          {
-            DisplayFrame p =  new DisplayFrame();
+            PrFrame p =  new PrFrame(pid);
             p.setVisible(true);
+            
          }
+         else 
+         {
+         JOptionPane.showMessageDialog(this, "Invalid Login Id or Password");
+         } 
       }
       else if(ae.getSource()==b3 && checkBox1.isSelected())
       {
