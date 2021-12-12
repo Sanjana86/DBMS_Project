@@ -8,7 +8,8 @@ public static void main(){
 String name =  ProfFrame.t1.getText();
 String rollno = ProfFrame.t3.getText();
 String email = ProfFrame.t2.getText();
-String password = ProfFrame.t5.getText();
+char[] password = ProfFrame.p1.getPassword();
+String pass = String.valueOf(password);
 try{  
 	Class.forName("com.mysql.cj.jdbc.Driver");  
 	Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/fbform","root","rootroot");
@@ -18,7 +19,7 @@ try{
 	stmt.setString(1, name);
 	stmt.setString(2, rollno);
 	stmt.setString(3, email);
-	stmt.setString(4, password);
+	stmt.setString(4, pass);
 	stmt.executeUpdate();
 	
 	stmt.close();
