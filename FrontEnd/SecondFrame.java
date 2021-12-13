@@ -1,5 +1,4 @@
 package FrontEnd;
-//package Frontend;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -11,11 +10,14 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+import Connection.*;
 
 public class SecondFrame extends JFrame implements ActionListener {
 	String sid;
-	JLabel l1; JTextField t1;
-	JButton b1,b2,b3,b4,b5;
+	JLabel l1; 
+	JTextField t1;
+	JButton b1,b2,b3,b4,b5,b6;
+	public static String sub_code;
 
 	SecondFrame(String sid) {
 		this.sid = sid;
@@ -47,25 +49,29 @@ public class SecondFrame extends JFrame implements ActionListener {
 		b2 = new JButton("CS307 : OS");
 		b3 = new JButton("CS308 : DBMS");
 		b4 = new JButton("CS309 : MPI");
+		b6 = new JButton("CS314 : PW");
 		b5 = new JButton("Back");
 
-		b1.setBounds(180,200,300,50);
-        b2.setBounds(180,260,300,50);
-        b3.setBounds(180,320,300,50);
-        b4.setBounds(180,380,300,50);
-        b5.setBounds(295,500,70,40);
+		b1.setBounds(180,180,300,50);
+        b2.setBounds(180,240,300,50);
+        b3.setBounds(180,300,300,50);
+        b4.setBounds(180,360,300,50);
+		b6.setBounds(180,420,300,50);
+        b5.setBounds(295,480,70,40);
 
         b1.setBackground(Color.white);
         b2.setBackground(Color.white);
         b3.setBackground(Color.white);
         b4.setBackground(Color.white);
         b5.setBackground(Color.white);
+		b6.setBackground(Color.white);
 
         b5.addActionListener(this);
 		b1.addActionListener(this);
 		b2.addActionListener(this);
 		b3.addActionListener(this);
-		b4.addActionListener(this);	
+		b4.addActionListener(this);
+		b6.addActionListener(this);		
 
 		background.add(l1);
 		background.add(t1);
@@ -74,6 +80,7 @@ public class SecondFrame extends JFrame implements ActionListener {
 		background.add(b3);
 		background.add(b4);
 		background.add(b5);
+		background.add(b6);
 
 		
 		
@@ -90,8 +97,9 @@ public class SecondFrame extends JFrame implements ActionListener {
 
 		else if(ae.getSource() == b1)
 		{
-			
-			FeedBack f3 = new FeedBack();
+			sub_code = "CS 306";
+			PNConn.main();
+			FeedBack f3 = new FeedBack(sub_code);
 			f3.setVisible(true);
 			
 			
@@ -100,18 +108,20 @@ public class SecondFrame extends JFrame implements ActionListener {
 		else if(ae.getSource() == b2)
 		{
 			
-			
-			FeedBack f3 = new FeedBack();
+		
+			sub_code = "CS 307";
+			PNConn.main();
+			FeedBack f3 = new FeedBack(sub_code);
 			f3.setVisible(true);
-			
 			
 		}
 
 		else if(ae.getSource() == b3)
 		{
 			
-			
-			FeedBack f3 = new FeedBack();
+			sub_code = "CS 308";
+			PNConn.main();
+			FeedBack f3 = new FeedBack(sub_code);
 			f3.setVisible(true);
 			
 			
@@ -120,8 +130,20 @@ public class SecondFrame extends JFrame implements ActionListener {
 		else if(ae.getSource() == b4)
 		{
 			
+			sub_code = "CS 309";
+			PNConn.main();
+			FeedBack f3 = new FeedBack(sub_code);
+			f3.setVisible(true);
 			
-			FeedBack f3 = new FeedBack();
+			
+		}
+
+		else if(ae.getSource() == b6)
+		{
+			
+			sub_code = "CS 314";
+			PNConn.main();
+			FeedBack f3 = new FeedBack(sub_code);
 			f3.setVisible(true);
 			
 			
