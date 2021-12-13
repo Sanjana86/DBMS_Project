@@ -30,13 +30,13 @@ public class FeedBack extends JFrame implements ActionListener {
 		setSize(750,750);
 		
 		BufferedImage img = null;
-		 try{
-		 img =  ImageIO.read(getClass().getResource("p3.png"));}
-		 catch(IOException ex)
-		 {}
-		 background = new JLabel(new ImageIcon(img));
-      background.setBounds(0,0,750,750);
-      add(background);
+		try{
+		img =  ImageIO.read(getClass().getResource("qstns.png"));}
+		catch(IOException ex)
+		{}
+		background = new JLabel(new ImageIcon(img));
+      	background.setBounds(0,0,750,750);
+      	add(background);
 
 
         l1 = new JLabel("Prof Name:");
@@ -49,7 +49,7 @@ public class FeedBack extends JFrame implements ActionListener {
 
         t2=new JTextField(50);
 		t3=new JTextField(50);
-        t4=new JTextField(200);
+        t4=new JTextField(10);
         t5=new JTextField(10);
         t6=new JTextField(10);
         t7=new JTextField(10);
@@ -61,7 +61,7 @@ public class FeedBack extends JFrame implements ActionListener {
 
         l4=new JLabel("Did the instructor provided you with assignments,were they helpful?");  
 
-        l5=new JLabel("Any Suggestions?");
+        l5=new JLabel("Did the course gave you confidence to do more advanced work in the subject?");
 
         Font myFont = new Font("Serif",Font.PLAIN,20);
 
@@ -72,8 +72,8 @@ public class FeedBack extends JFrame implements ActionListener {
 		l3.setBounds(50,250,510,40);
 		l4.setBounds(50,350,570,40);
 
-		l5.setBounds(50,450,200,30);
-		t4.setBounds(50,500,400,80);
+		l5.setBounds(50,450,650,30);
+		t4.setBounds(50,500,100,40);
 		t1.setBounds(150,100,200,30);
                 
 		b1.setBounds(570,590,90,40);
