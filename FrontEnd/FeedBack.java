@@ -11,11 +11,12 @@ import Connection.*;
 
 import Connection.FConn;
 
+
 public class FeedBack extends JFrame implements ActionListener {
 	public static String pname;
 	public static String sub;
 	JButton b1,b2;
-	JLabel l1,l2,l3,l4,l5;
+	JLabel l1,l2,l3,l4,l5,l6,l7,l8,l9,l0;
 	public static JTextField t1,t2,t3,t4,t5,t6,t7;
 	
 	FeedBack(String sub)
@@ -44,6 +45,12 @@ public class FeedBack extends JFrame implements ActionListener {
 		t1.setText(pname);
 		t1.setEditable(false);
 
+		l0 = new JLabel("1-bad");
+        l6 = new JLabel("2-avg");
+        l7 = new JLabel("3-neutral");
+        l8 = new JLabel("4-good");
+        l9 = new JLabel("5-best");
+
 		b1 = new JButton("Logout");
 		b2 = new JButton("Submit");
 
@@ -65,8 +72,13 @@ public class FeedBack extends JFrame implements ActionListener {
 
         Font myFont = new Font("Serif",Font.PLAIN,20);
 
-        l1.setFont(myFont);l2.setFont(myFont);l3.setFont(myFont);l4.setFont(myFont);l5.setFont(myFont);
+        l1.setFont(myFont);l2.setFont(myFont);l3.setFont(myFont);l4.setFont(myFont);l5.setFont(myFont); l6.setFont(myFont);l7.setFont(myFont);l8.setFont(myFont);l9.setFont(myFont);l0.setFont(myFont);
 
+		l6.setBounds(120,50,70,30);
+        l7.setBounds(190,50,80,30);
+        l8.setBounds(270,50,70,30);
+        l9.setBounds(340,50,70,30);
+        l0.setBounds(50,50,100,40);
         l1.setBounds(50,100,100,30);
 		l2.setBounds(50,150,400,40);
 		l3.setBounds(50,250,510,40);
@@ -81,7 +93,11 @@ public class FeedBack extends JFrame implements ActionListener {
         b1.setBackground(Color.white);
         b2.setBackground(Color.white);
 
-
+		background.add(l0);
+        background.add(l6);
+        background.add(l7);
+        background.add(l8);
+        background.add(l9);
 		background.add(l1);
 		background.add(l2);
 		background.add(l3);
