@@ -137,7 +137,9 @@ public class FeedBack extends JFrame implements ActionListener {
       
 			if (ae.getSource()==b2)
             {
-                FConn.main();    
+                FConn.main(); 
+				JOptionPane.showMessageDialog(this, "Your Feedback is submitted");
+				System.exit(0);   
             }
             else if(ae.getSource()==b1)
             {
