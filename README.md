@@ -12,8 +12,7 @@ This repository has the source code of the Feedback Form for the Database Manage
 ---------------------------------
 Flow Diagram:
 
-
-
+![Screenshot 2021-12-14 at 8 00 15 PM](https://user-images.githubusercontent.com/89903702/146018291-14353260-1abb-4d0a-8781-72f12818cdd4.jpeg)
 
 ### Technical Requirements:
 
