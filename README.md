@@ -4,5 +4,5 @@ This repository has the source code of the Feedback Form for the Database Manage
 
 ### Project Overview
 -----------------------------------
-*This project is about feedback forms.
+* This project is about feedback forms.
 
