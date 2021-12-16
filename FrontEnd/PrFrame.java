@@ -90,12 +90,14 @@ public void actionPerformed(ActionEvent ae)
         if(ae.getSource()==b1)
         {
             DisplayFrame f = new DisplayFrame();
+            f.setTitle(sub1);
             f.setVisible(true);
         }
         else if(ae.getSource()==b2)
         {
             sub1 = sub2;
             DisplayFrame f = new DisplayFrame();
+            f.setTitle(sub1);
             f.setVisible(true);
         }
       
