@@ -19,6 +19,9 @@ Flow Diagram:
 * Java==16.0.1
 * Mysql==8.0.26
 * Mysql connector java / J connector==8.0.27
+* The Visual Studio Code was used to run the codes.
+* In the referenced libraries of Visual Studio Code, add mysql-connector-java-8.0.27.
+* Run the codes without Debugging.
 
 ### Team Members:
 --------------------------------
